@@ -1,0 +1,21 @@
+model: AutoEncoder
+library: PyOD
+
+dataset: creditcard.csv
+target: Class
+
+training:
+  epochs: 20
+  batch_size: 256
+  contamination: 0.01
+  train_on_normal_only: true
+
+architecture:
+  hidden_layers: [64, 32, 32, 64]
+
+evaluation:
+  metrics:
+    - precision
+    - recall
+    - f1-score
+    - roc_auc
